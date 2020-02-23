@@ -1,5 +1,6 @@
 FILES = cv coverletter
 PERSON ?=
+LANGUAGE = de
 
 $(if ${PERSON}, $(eval SUFFIX = -${PERSON}))
 
@@ -13,11 +14,13 @@ else
 	RUN = pandoc
 endif
 
+all: $(FILES)
+
 $(FILES):
 	mkdir -p results/
-	$(RUN) data/details${SUFFIX}.yml data/$@${SUFFIX}.yml -o results/$@${SUFFIX}.pdf --template=$@.tex --standalone --pdf-engine=xelatex
+	$(RUN) -V lang=${LANGUAGE} data/details${SUFFIX}.yml data/$@${SUFFIX}.yml -o results/$@${SUFFIX}.pdf --template=$@.tex --standalone --pdf-engine=xelatex
 
 .PHONY: $(FILES) clean
 
 clean:
-	rm *.aux *.log *.out
+	rm -vf *.aux *.log *.out

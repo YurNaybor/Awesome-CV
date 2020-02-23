@@ -88,6 +88,8 @@
   pdfsubject={},
   pdfkeywords={}
 }
+% German localization
+\RequirePackage[ngerman]{babel}
 
 
 %-------------------------------------------------------------------------------
