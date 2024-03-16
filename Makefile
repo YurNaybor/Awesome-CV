@@ -18,7 +18,7 @@ all: $(FILES)
 
 $(FILES):
 	mkdir -p results/
-	$(RUN) -V lang=${LANGUAGE} data/details${SUFFIX}.yml data/$@${SUFFIX}.yml -o results/$@${SUFFIX}.pdf --template=$@.tex --standalone --pdf-engine=xelatex
+	$(RUN) data/details${SUFFIX}.yml data/$@${SUFFIX}.yml -o results/$@${SUFFIX}.pdf --template=$@.tex --standalone --pdf-engine=xelatex
 
 .PHONY: $(FILES) clean
 

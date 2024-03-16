@@ -321,6 +321,10 @@
 % Usage: \xing{<xing name>}
 \newcommand*{\xing}[1]{\def\@xing{#1}}
 
+% Defines writer's date of birth (optional)
+% Usage: \birthday{<dd-mm-yyyy>}
+\newcommand*{\birthday}[1]{\def\@birthday{#1}}
+
 % Defines writer's medium profile (optional)
 % Usage: \medium{<medium account>}
 \newcommand*{\medium}[1]{\def\@medium{#1}}
@@ -534,6 +538,12 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://scholar.google.com/citations?user=\@googlescholarid}{\faGraduationCap\acvHeaderIconSep\@googlescholarname}%
+        }%
+      \ifthenelse{\isundefined{\@birthday}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \faBirthdayCake\acvHeaderIconSep\@birthday%
         }%
       \ifthenelse{\isundefined{\@extrainfo}}%
         {}%

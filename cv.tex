@@ -73,6 +73,7 @@ $if(address)$
   }
 $endif$
 $if(phone)$\mobile{$phone$}$endif$
+$if(birthday)$\birthday{$birthday$}$endif$
 %%% Social
 $if(email)$\email{$email$}$endif$
 $if(homepage)$\homepage{$homepage$}$endif$
@@ -98,7 +99,7 @@ $if(quote)$\quote{``$quote$"}$endif$
 % Leave any of these blank if they are not needed
 \makecvfooter
   {$if(date)$\today$endif$}
-  {$name.first$ $name.last$~~~·~~~Curriculum Vitae}
+  {$name.first$ $name.last$~~~·~~~Lebenslauf}
   {\thepage}
 
 
@@ -168,7 +169,7 @@ $endif$
 
 %% Qualification
 $if(qualification)$
-  \cvsection{Weiterqualifizierung}
+  \cvsection{Qualifizierung}
   \begin{cventries}
     $for(qualification)$
       \cventry
